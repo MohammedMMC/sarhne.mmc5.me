@@ -32,6 +32,7 @@ app.get("/", (req, res) => {
 app.post("/message", async (req, res) => {
     let { message } = req.body;
     let images = [];
+    message = "*Message:*\n" + message;
     if (req.files) {
         images = Object.values(req.files).map((img) => {
             let filename = `${randomstring.generate(5)}${path.extname(img.name)}`;
@@ -40,7 +41,7 @@ app.post("/message", async (req, res) => {
         });
         message += `\n\n*Images:*\n${images.map((img) => `${req.headers.referer}CDN/${img}`).join("\n")}`;
     }
-    message += `\n\n*Time:* ${new Date().toLocaleTimeString()}\n*Date:* ${new Date().toLocaleDateString()}`
+    message += `\n\n*Time:* ${new Date().toLocaleTimeString()}\n*Date:* ${new Date().toLocaleDateString()}`;
     let messageURL = `https://api.callmebot.com/whatsapp.php?phone=${process.env.PHONE_NUMBER}&apikey=${process.env.WHATSAPP_API_KEY}&text=${message}`;
     fetch(url.parse(messageURL, true).href);
     res.status(200).json({ text: "تم إرسال الرسالة بنجاح!", icon: "success" });
