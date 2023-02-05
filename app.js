@@ -40,6 +40,7 @@ app.post("/message", async (req, res) => {
         });
         message += `\n\n*Images:*\n${images.map((img) => `${req.headers.referer}CDN/${img}`).join("\n")}`;
     }
+    message += `\n\n*Time:* ${new Date().toLocaleTimeString()}\n*Date:* ${new Date().toLocaleDateString()}`
     let messageURL = `https://api.callmebot.com/whatsapp.php?phone=${process.env.PHONE_NUMBER}&apikey=${process.env.WHATSAPP_API_KEY}&text=${message}`;
     fetch(url.parse(messageURL, true).href);
     res.status(200).json({ text: "تم إرسال الرسالة بنجاح!", icon: "success" });
