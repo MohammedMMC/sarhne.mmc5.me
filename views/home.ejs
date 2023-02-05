@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+  <%- include("./parts/head.ejs"); %>
+  <title>MMC Sarhne</title>
+  <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body dir="rtl">
+  <input type="file" id="images" accept="image/*" style="display: none;" multiple>
+  <section class="container">
+
+    <div class="form">
+      <img src="/images/avatar.jpg" alt="MMC Avatar">
+      <h5>أرسل لي رسالة دون أن أعرفك</h5>
+      <textarea id="message" cols="30" rows="10" placeholder="هناك شيء تريد قوله لـ محمد، بدون ان يعرفك ؟ أكتب هنا"></textarea>
+      <div class="buttons">
+        <button onclick="selectImages(this);"><i class="fas fa-plus"></i> أضف صورة</button>
+        <button onclick="sendMessage();">إرسال <i class="fal fa-paper-plane"></i></button>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="/scripts/home.js"></script>
+  <%- include("./parts/footer.ejs"); %>
+</body>
+
+</html>

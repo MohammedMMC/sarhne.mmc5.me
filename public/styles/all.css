@@ -1,0 +1,95 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(116.82deg, #D5C67A 0%, #06A77D 100%);
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    color: #fff;
+}
+
+body::before {
+    content: "";
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(/images/background.png);
+    opacity: 0.6;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #000000;
+}
+
+footer a:hover {
+    color: #303030;
+}
+
+.swal2-popup.swal2-toast {
+    background: rgba(0, 83, 119, 0.5);
+    backdrop-filter: blur(3.5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 12px 0px rgb(0 0 0 / 50%);
+    color: #e8e8e8e8;
+}
+
+.swal2-timer-progress-bar {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.swal2-styled.swal2-deny,
+.swal2-styled.swal2-cancel,
+.swal2-styled.swal2-confirm {
+    transition: unset;
+    box-shadow: unset !important;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 5px 25px;
+    transition: 250s;
+    color: #e8e8e8e8;
+}
+
+.swal2-styled.swal2-deny:hover,
+.swal2-styled.swal2-cancel:hover,
+.swal2-styled.swal2-confirm:hover {
+    filter: brightness(0.85);
+}
+
+.swal2-styled.swal2-deny:disabled,
+.swal2-styled.swal2-cancel:disabled,
+.swal2-styled.swal2-confirm:disabled {
+    filter: brightness(0.6);
+}
+
+.swal2-popup {
+    background: rgba(3, 103, 145, 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 12px 0px rgb(0 0 0 / 50%);
+    border-radius: 20px;
+    color: #e8e8e8e8;
+}
+
+.swal2-success-circular-line-left,
+.swal2-success-circular-line-right,
+.swal2-success-fix {
+    background-color: rgb(21 85 103 / 36%);
+    display: none;
+}
